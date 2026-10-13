@@ -20,12 +20,12 @@
    O arquivo também pode ser um link completo (https://...).
    -------------------------------------------------------------------------- */
 const NEWSLETTER = {
-  nome: "De olho no mercado",
+  nome: "Acontece no Mercado",
 
   ultima: {
-    titulo: "",    // exemplo: "Edição de outubro"
-    data: "",      // exemplo: "Outubro de 2026"
-    arquivo: ""    // exemplo: "newsletter/2026-10.pdf"
+    titulo: "ACONTECE NO MERCADO - Setembro/26",    // exemplo: "Edição de outubro"
+    data: "30/09/2026",      // exemplo: "Outubro de 2026"
+    arquivo: "newsletter/ACONTECE NO MERCADO_Setembro 2026.pdf"    // exemplo: "newsletter/2026-10.pdf"
   },
 
   anteriores: [
