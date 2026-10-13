@@ -3,195 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inteligência de mercado - Dashboards</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --fundo: #12100C;
-    --caracol-1: #16281B;
-    --caracol-2: #0B160F;
-    --caracol-acc: #7FAF7A;
-    --bondinho-1: #B24E1E;
-    --bondinho-2: #6E2E10;
-    --bondinho-acc: #F2A65A;
-    --creme: #F1EAD9;
-  }
-
-  *{ box-sizing: border-box; margin:0; padding:0; }
-
-  html, body{
-    height: 100%;
-    font-family: 'Inter', sans-serif;
-    background: var(--fundo);
-    color: var(--creme);
-  }
-
-  .marca{
-    position: absolute;
-    top: 1.6rem;
-    left: 1.8rem;
-    z-index: 5;
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 0.01em;
-  }
-
-  .cena{
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    overflow: hidden;
-  }
-
-  @media (max-width: 780px){
-    .cena{ flex-direction: column; min-height: auto; }
-  }
-
-  .painel{
-    position: relative;
-    flex: 1;
-    min-height: 100vh;
-    display: flex;
-    align-items: flex-end;
-    padding: 3.2rem;
-    text-decoration: none;
-    color: var(--creme);
-    isolation: isolate;
-  }
-
-  @media (max-width: 780px){
-    .painel{ min-height: 62vh; padding: 2.2rem; }
-  }
-
-  .painel-caracol{
-    background: linear-gradient(200deg, var(--caracol-1) 0%, var(--caracol-2) 100%);
-    clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
-  }
-
-  .painel-bondinho{
-    background: linear-gradient(200deg, var(--bondinho-1) 0%, var(--bondinho-2) 100%);
-    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
-    margin-left: -12vw;
-  }
-
-  @media (max-width: 780px){
-    .painel-caracol{ clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
-    .painel-bondinho{ clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 100%); margin-left: 0; margin-top: -10vh; }
-  }
-
-  .painel-caracol{ z-index: 2; }
-  .painel-bondinho{ z-index: 1; }
-
-  .textura{
-    position: absolute;
-    inset: 0;
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
-  .conteudo{
-    position: relative;
-    z-index: 2;
-    max-width: 22ch;
-  }
-
-  .painel-bondinho .conteudo{ margin-left: auto; text-align: right; max-width: 24ch; }
-
-  .rotulo{
-    font-size: 0.76rem;
-    letter-spacing: 0.03em;
-    margin-bottom: 0.7rem;
-  }
-
-  .painel-caracol .rotulo{ color: var(--caracol-acc); }
-  .painel-bondinho .rotulo{ color: var(--bondinho-acc); }
-
-  .conteudo h2{
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: clamp(2rem, 5.4vw, 3.4rem);
-    line-height: 1.03;
-    margin-bottom: 1rem;
-  }
-
-  .ir{
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-    padding-bottom: 0.2rem;
-    border-bottom: 1px solid currentColor;
-    transition: gap 0.25s ease;
-  }
-
-  .painel-bondinho .ir{ flex-direction: row-reverse; }
-
-  .painel-caracol .ir{ color: var(--caracol-acc); }
-  .painel-bondinho .ir{ color: var(--bondinho-acc); }
-
-  .painel:hover .ir{ gap: 0.8rem; }
-
-  .seta{
-    width: 9px;
-    height: 9px;
-    border-right: 1.5px solid currentColor;
-    border-bottom: 1.5px solid currentColor;
-    transform: rotate(-45deg);
-  }
-
-  .painel-bondinho .seta{ transform: rotate(135deg); }
-
-  .rodape{
-    position: absolute;
-    bottom: 1.2rem;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 0.76rem;
-    color: #8A8375;
-    z-index: 5;
-    pointer-events: none;
-  }
-</style>
+<title>Inteligência de mercado | Grupo Iter</title>
+<meta name="description" content="Painéis e análises que acompanham o mercado dos parques do Grupo Iter, reunidos em um só lugar.">
+<meta name="theme-color" content="#4b4f9e">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preload" href="assets/fonts/Stolzl-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Stolzl-Light.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Para o site não aparecer em buscas do Google, tire os comentários da linha abaixo:
+<meta name="robots" content="noindex, nofollow">
+-->
+<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-  <div class="cena">
-    <span class="marca">Inteligência de mercado</span>
-
-    <!-- PARQUE DO CARACOL — verde escuro -->
-    <a class="painel painel-caracol" href="caracol.html" id="link-caracol">
-      <svg class="textura" viewBox="0 0 500 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M180 0 C170 200, 190 300, 165 800" stroke="#7FAF7A" stroke-width="8" fill="none" opacity="0.35"/>
-        <path d="M220 0 C215 250, 235 350, 205 800" stroke="#F1EAD9" stroke-width="3" fill="none" opacity="0.2"/>
-        <path d="M140 0 C130 220, 150 320, 120 800" stroke="#F1EAD9" stroke-width="2" fill="none" opacity="0.15"/>
-      </svg>
-      <div class="conteudo">
-        <div class="rotulo">indicadores &middot; visitação</div>
-        <h2>Parque do<br>Caracol</h2>
-        <span class="ir">Abrir painel <span class="seta"></span></span>
+  <header class="topo">
+    <img class="topo__apoio" src="assets/img/symbol-white.png" alt="" aria-hidden="true">
+    <div class="topo__in">
+      <div class="topo__barra">
+        <a href="index.html" aria-label="Grupo Iter, página inicial">
+          <img class="topo__logo" src="assets/img/logo-grupo-iter-white.png" alt="Grupo Iter">
+        </a>
+        <nav class="topo__nav" aria-label="Seções da página">
+          <a href="#paineis">Painéis</a>
+          <a href="#newsletter">Newsletter</a>
+        </nav>
       </div>
-    </a>
 
-    <!-- PARQUE DO BONDINHO — laranja -->
-    <a class="painel painel-bondinho" href="bondinho.html" id="link-bondinho">
-      <svg class="textura" viewBox="0 0 500 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="40" y1="650" x2="460" y2="120" stroke="#F2A65A" stroke-width="4" opacity="0.4"/>
-        <line x1="40" y1="690" x2="460" y2="160" stroke="#F1EAD9" stroke-width="1.5" opacity="0.25"/>
-        <rect x="230" y="330" width="46" height="30" rx="4" fill="#F1EAD9" opacity="0.4"/>
-        <line x1="253" y1="330" x2="253" y2="290" stroke="#F1EAD9" stroke-width="2" opacity="0.4"/>
-      </svg>
-      <div class="conteudo">
-        <div class="rotulo">indicadores &middot; visitação</div>
-        <h2>Parque do<br>Bondinho</h2>
-        <span class="ir">Abrir painel <span class="seta"></span></span>
+      <div class="topo__hero">
+        <h1>Inteligência de mercado</h1>
+        <p class="topo__lede">Os painéis e análises que acompanham o mercado dos nossos parques, reunidos em um só lugar. Escolha um painel para abrir.</p>
       </div>
-    </a>
-  </div>
+    </div>
+  </header>
 
+  <main class="layout">
+    <div class="paineis" id="paineis">
+      <h2 class="so-leitor">Painéis por parque</h2>
+      <noscript><p>Ative o JavaScript do navegador para ver a lista de painéis.</p></noscript>
+    </div>
+
+    <aside class="lateral" id="newsletter" aria-label="Newsletter"></aside>
+  </main>
+
+  <footer class="rodape">
+    <div class="rodape__in">
+      <img src="assets/img/logo-grupo-iter-color.png" alt="Grupo Iter">
+      <p id="rodape-texto">Painéis e análises de inteligência de mercado.</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

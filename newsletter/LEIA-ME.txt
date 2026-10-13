@@ -1,0 +1,4 @@
+Coloque aqui os arquivos (PDF) das edições da newsletter "De olho no mercado".
+
+Depois de subir o arquivo, abra o config.js e atualize o bloco NEWSLETTER
+com o título, a data e o caminho (exemplo: newsletter/2026-10.pdf).
