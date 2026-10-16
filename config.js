@@ -56,7 +56,7 @@ const PARQUES = [
       {
         titulo: "Tarifários",
         descricao: "Preços praticados pela concorrência",
-        link: "https://emillyvianabr.github.io/tarifarios_caracol/",
+        link: "https://emillyvianabr.github.io/tarifarios/",
         atualizado: ""
       },
       {
