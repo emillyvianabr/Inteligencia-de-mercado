@@ -203,8 +203,27 @@ img { display: block; max-width: 100%; }
   color: var(--slate-700);
 }
 
-.parque--teal  { --acc: var(--iter-teal); }
-.parque--blue  { --acc: var(--iter-blue); }
+.parque--teal   { --acc: var(--iter-teal); }
+.parque--blue   { --acc: var(--iter-blue); }
+.parque--indigo { --acc: var(--iter-indigo); }
+
+/* Capa sem foto (bloco "Geral"): fundo indigo com o símbolo da marca */
+.parque__capa--marca {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+  background: var(--iter-indigo);
+}
+.parque__capa--marca img {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  width: 240px;
+  height: auto;
+  transform: translateY(-50%);
+  object-fit: contain;
+  opacity: .16;
+}
 
 /* ---------- Painéis (linhas) ---------- */
 
@@ -259,6 +278,14 @@ img { display: block; max-width: 100%; }
   color: var(--white);
 }
 .painel:hover .painel__seta svg { transform: translateX(2px); }
+
+/* Bloco sem painéis ainda */
+.painel-vazio {
+  padding: 22px 28px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: .97rem;
+  color: var(--slate-700);
+}
 
 /* ---------- Newsletter ---------- */
 
@@ -401,6 +428,8 @@ img { display: block; max-width: 100%; }
   .topo__logo { height: 28px; }
   .topo__nav { gap: 18px; font-size: 14px; }
   .parque__capa { height: 150px; }
+  .parque__capa--marca { height: 96px; }
+  .painel-vazio { padding: 18px 20px; }
   .parque__titulo { padding: 20px 20px 16px; }
   .parque__titulo h2 { font-size: 1.6rem; }
   .painel { padding: 18px 20px; gap: 14px; }

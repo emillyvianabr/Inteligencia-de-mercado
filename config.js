@@ -42,8 +42,35 @@ const NEWSLETTER = {
 
    "atualizado" é opcional (exemplo: "Atualizado em 10/10/2026").
    Se não quiser mostrar, deixe vazio ou apague a linha.
+
+   O bloco "Geral" é para painéis abrangentes, que não são de um parque
+   específico. Ele não tem foto: a capa usa a marca do Grupo Iter.
+   Para mudar a ordem dos blocos na página, mova o bloco inteiro de lugar.
    -------------------------------------------------------------------------- */
 const PARQUES = [
+  {
+    id: "geral",
+    nome: "Geral",
+    local: "Painéis abrangentes, de todo o Grupo",
+    foto: "",          // sem foto: a capa usa a marca do Grupo Iter
+    cor: "indigo",
+    paineis: [
+      {
+        titulo: "Monitor Acontece no Mercado",
+        descricao: "Notícias do setor reunidas de Panrotas, M&E, G1, Embratur, Agência Brasil, Valor Econômico e ABC+",
+        link: "https://inteligencia-iter.github.io/acontece-no-mercado/",
+        atualizado: ""
+      },
+      {
+        titulo: "Market Share",
+        descricao: "Visitação e market share dos atrativos do Rio de Janeiro",
+        link: "https://emillyvianabr.github.io/marketshare/",
+        atualizado: ""
+      }
+      // Para mais painéis gerais, copie o bloco acima (com uma vírgula depois da chave).
+    ]
+  },
+
   {
     id: "caracol",
     nome: "Parque do Caracol",

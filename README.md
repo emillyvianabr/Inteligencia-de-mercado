@@ -18,6 +18,13 @@ Enquanto `arquivo` estiver vazio, o banner mostra "A primeira edição sai em br
 No `config.js`, dentro de `PARQUES`, copie um bloco `{ titulo, descricao, link }`
 na lista `paineis` do parque certo e troque os textos.
 
+### Painéis gerais (abrangentes)
+O bloco **Geral** fica no topo da lista de painéis e é para dashboards que não são
+de um parque específico. Para publicar um, preencha um bloco `{ titulo, descricao, link }`
+dentro de `paineis` no bloco `id: "geral"`. Enquanto a lista estiver vazia, a página
+mostra "Os painéis deste bloco serão publicados em breve". Esse bloco não tem foto
+(deixe `foto` vazio): a capa usa a marca do Grupo Iter.
+
 ### Adicionar um parque
 Copie um bloco inteiro de parque no `config.js`, troque `id`, `nome`, `local` e
 `foto` (coloque a imagem em `assets/img/`) e preencha os painéis.

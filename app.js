@@ -18,10 +18,18 @@
 
     var capa = el('header', 'parque__capa');
     var img = el('img');
-    img.src = parque.foto;
-    img.alt = parque.fotoAlt || '';
-    img.loading = 'lazy';
-    if (parque.fotoPosicao) img.style.objectPosition = parque.fotoPosicao;
+    if (parque.foto) {
+      img.src = parque.foto;
+      img.alt = parque.fotoAlt || '';
+      img.loading = 'lazy';
+      if (parque.fotoPosicao) img.style.objectPosition = parque.fotoPosicao;
+    } else {
+      /* Sem foto (ex.: bloco "Geral"): capa com a marca do Grupo Iter */
+      capa.classList.add('parque__capa--marca');
+      img.src = 'assets/img/symbol-white.png';
+      img.alt = '';
+      img.setAttribute('aria-hidden', 'true');
+    }
     capa.appendChild(img);
 
     var titulo = el('div', 'parque__titulo');
@@ -33,7 +41,12 @@
     secao.appendChild(titulo);
 
     var lista = el('ul', 'painel-lista');
-    parque.paineis.forEach(function (p) {
+    var paineis = parque.paineis || [];
+    if (!paineis.length) {
+      var vazio = el('li', 'painel-vazio', 'Os painéis deste bloco serão publicados em breve.');
+      lista.appendChild(vazio);
+    }
+    paineis.forEach(function (p) {
       var li = el('li');
       var a = el('a', 'painel');
       a.href = p.link;
